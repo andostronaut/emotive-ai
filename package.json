@@ -1,0 +1,38 @@
+{
+  "name": "emotive-ai",
+  "version": "0.1.0",
+  "description": "Sentiment and emotion analysis cli that uses machine learning and natural language processing to identify and classify emotions in text data",
+  "license": "MIT",
+  "bin": {
+    "emotive-ai": "./dist/cli.mjs"
+  },
+  "author": {
+    "name": "iamando",
+    "email": "iamando@tuta.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamando/emotive-ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iamando/emotive-ai/issues"
+  },
+  "homepage": "https://github.com/iamando/emotive-ai#readme",
+  "keywords": [
+    "emotive-ai",
+    "cli",
+    "ai",
+    "sentiment-analysis",
+    "emotion-analysis",
+    "natural-language",
+    "machine-learning",
+    "text"
+  ],
+  "files": [
+    "dist",
+    "docs"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
