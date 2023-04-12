@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Sentiment and emotion analysis cli that uses machine learning and natural language processing to identify and classify emotions in text data",
   "license": "MIT",
+  "type": "module",
   "bin": {
     "emotive-ai": "./dist/cli.mjs"
   },
