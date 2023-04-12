@@ -34,7 +34,16 @@
     "docs"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "jiti ./src/cli.ts",
+    "typecheck": "tsc",
+    "build": "pkgroll",
+    "lint": "prettier --check . && eslint",
+    "lint:fix": "prettier --write . && eslint --fix",
+    "clean": "rimraf dist",
+    "release": "npm run clean && npm run build && npm publish --follow-tags",
+    "release:major": "npm run clean && npm run build && npm version major && npm run build && npm publish && git push --follow-tags",
+    "release:minor": "npm run clean && npm run build && npm version minor && npm run build && npm publish && git push --follow-tags",
+    "release:patch": "npm run clean && npm run build && npm version patch && npm run build && npm publish && git push --follow-tags"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.192",
