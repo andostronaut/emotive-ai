@@ -3,6 +3,8 @@ import os from 'os'
 import ini from 'ini'
 import path from 'path'
 
+import { CliError } from './cli-error'
+
 const { hasOwnProperty } = Object.prototype
 export const hasOwn = (object: unknown, key: PropertyKey) =>
   hasOwnProperty.call(object, key)
@@ -10,8 +12,8 @@ export const hasOwn = (object: unknown, key: PropertyKey) =>
 const configParsers = {
   MONKEY_LEARN_API(key?: string) {
     if (!key) {
-      throw new Error(
-        `Please set your MonkeyLearn API key config set MONKEY_LEARN_API=<your token>\``
+      throw new CliError(
+        `Please set your MonkeyLearn API key config set MONKEY_LEARN_API=<your token>`
       )
     }
 
@@ -74,7 +76,7 @@ export const setConfigs = async (keyValues: [key: string, value: string][]) => {
 
   for (const [key, value] of keyValues) {
     if (!hasOwn(configParsers, key)) {
-      throw new Error(`Invalid config property: ${key}`)
+      throw new CliError(`Invalid config property: ${key}`)
     }
 
     const parsed = configParsers[key as ConfigKeys](value)

@@ -4,6 +4,7 @@ import Monkey from 'monkeylearn'
 
 import { API_KEY } from './utils/constants'
 import { transpileTag } from './utils/tag'
+import { CliError } from './utils/cli-error'
 
 export const process = ({ prompt }: { prompt: string }) => {
   getClassify({ prompt })
@@ -28,7 +29,7 @@ const getClassify = ({ prompt }: { prompt: string }) => {
   const data: string[] = []
 
   if (_.isUndefined(prompt) || _.isEmpty(prompt)) {
-    throw new Error('Prompt need to not empty , please verify your prompt')
+    throw new CliError('Prompt need to not empty , please verify your prompt')
   }
 
   data.push(prompt)
@@ -48,6 +49,6 @@ const getClassify = ({ prompt }: { prompt: string }) => {
     .catch(err => {
       spinner.stop('❌ Error occured on fetching response')
 
-      throw new Error(err.response)
+      throw new CliError(`Error occured on fetching response ${err.response}`)
     })
 }
