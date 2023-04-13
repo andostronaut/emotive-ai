@@ -29,7 +29,9 @@ const getClassify = ({ prompt }: { prompt: string }) => {
   const data: string[] = []
 
   if (_.isUndefined(prompt) || _.isEmpty(prompt)) {
-    throw new CliError('Prompt need to not empty , please verify your prompt')
+    throw new CliError(
+      'Prompt need to not be empty , please verify your prompt'
+    )
   }
 
   data.push(prompt)
