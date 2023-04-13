@@ -28,7 +28,7 @@ emotive-ai <text>
 ## Example
 
 ```bash
-emotive-ai "Hello guys"
+emotive-ai hello guys
 
 # response from processing
 {
@@ -36,7 +36,7 @@ emotive-ai "Hello guys"
   confidence: '0.4338557'
 }
 
-emotive-ai  "It's really a bad day"
+emotive-ai its really a bad day
 
 # response from processing
 {
