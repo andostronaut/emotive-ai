@@ -7,6 +7,18 @@
 
 Sentiment and emotion analysis cli that uses machine learning and natural language processing to identify and classify emotions in text data
 
+## Setup
+
+Get your MONKEY_LEARN_API_KEY from [MonkeyLearn](https://monkeylearn.com/signup/)
+
+> You can just create a account in trial just for test it
+
+Set your API_KEY via :
+
+```bash
+emotive-ai config set MONKEY_LEARN_API_KEY=<your key>
+```
+
 ## Usage
 
 Recommended

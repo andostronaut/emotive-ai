@@ -17,11 +17,12 @@ const getMonkeyModel = (model: string) => {
 }
 
 export const classify = async ({ prompt }: { prompt: string }) => {
-  const { MONKEY_LEARN_API: key, MONKEY_LEARN_MODEL: model } = await getConfig()
+  const { MONKEY_LEARN_API_KEY: key, MONKEY_LEARN_MODEL: model } =
+    await getConfig()
 
   if (!key) {
     throw new CliError(
-      'Please set your MonkeyLearn API key via `emotive-ai config set MONKEY_LEARN_API=<your token>`'
+      'Please set your MonkeyLearn API key via `emotive-ai config set MONKEY_LEARN_API_KEY=<your token>`'
     )
   }
 

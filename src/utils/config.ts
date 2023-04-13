@@ -10,7 +10,7 @@ export const hasOwn = (object: unknown, key: PropertyKey) =>
   hasOwnProperty.call(object, key)
 
 const configParsers = {
-  MONKEY_LEARN_API(key?: string) {
+  MONKEY_LEARN_API_KEY(key?: string) {
     if (!key) {
       throw new CliError(
         `Please set your MonkeyLearn API key config set MONKEY_LEARN_API=<your token>`
