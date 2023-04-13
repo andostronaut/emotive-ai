@@ -13,15 +13,17 @@ const configParsers = {
   MONKEY_LEARN_API_KEY(key?: string) {
     if (!key) {
       throw new CliError(
-        `Please set your MonkeyLearn API key config set MONKEY_LEARN_API=<your token>`
+        'Please set your MonkeyLearn API key via `emotive-ai config set MONKEY_LEARN_API_KEY=<your token>`'
       )
     }
 
     return key
   },
-  MONKEY_LEARN_MODEL(model?: string) {
+  MONKEY_LEARN_MODEL_ID(model?: string) {
     if (!model || model.length === 0) {
-      return 'cl_NDBChtr7'
+      throw new CliError(
+        'Please set your MonkeyLearn Model ID `emotive-ai config set MONKEY_LEARN_MODEL_ID=<your model id>`'
+      )
     }
 
     return model
