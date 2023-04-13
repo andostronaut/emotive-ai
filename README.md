@@ -49,7 +49,7 @@ emotive-ai hello guys
 > A positive sentiment tag indicates that the sentiment of a piece of text is generally positive.This could mean that the text expresses a favorable opinion, conveys happiness or excitement, or generally has a positive tone.
 
 ```bash
-emotive-ai its really a bad day # Negative
+emotive-ai its really a bad day
 ```
 
 > 😢 : Negative with 93.82% of confidence
