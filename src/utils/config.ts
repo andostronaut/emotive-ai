@@ -19,7 +19,7 @@ const configParsers = {
 
     return key
   },
-  MODEL(model?: string) {
+  MONKEY_LEARN_MODEL(model?: string) {
     if (!model || model.length === 0) {
       return 'cl_NDBChtr7'
     }

@@ -28,21 +28,9 @@ emotive-ai <text>
 ## Example
 
 ```bash
-emotive-ai hello guys
+emotive-ai hello guys # Positive
 
-# response from processing
-{
-  tag_name: 'positive',
-  confidence: '0.4338557'
-}
-
-emotive-ai its really a bad day
-
-# response from processing
-{
-  tag_name: 'negative',
-  confidence: '0.9047749'
-}
+emotive-ai its really a bad day # Negative
 ```
 
 ## Support
