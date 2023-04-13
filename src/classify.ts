@@ -75,8 +75,9 @@ const getClassify = ({
         cls.confidence
       )} of confidence`
       const desc: string = dedent`${descByTag[cls.tag_name]}`
+      const next: string = dedent`🎉 Ready for the next!`
 
-      const response = tagAndConfidence + '\n\n' + desc
+      const response = tagAndConfidence + '\n\n' + desc + '\n\n' + next
 
       spinner.stop(response)
     })
