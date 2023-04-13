@@ -9,7 +9,7 @@ Sentiment and emotion analysis cli that uses machine learning and natural langua
 
 ## Usage
 
-Recommended simple use case
+Recommended
 
 ```bash
 npx emotive-ai <text>
