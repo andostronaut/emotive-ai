@@ -14,3 +14,9 @@ const tagMapping: TagMapping = {
 export const transpileTag = (tag: string): string => {
   return tagMapping[tag] ?? tag
 }
+
+export const iconByTag: TagMapping = {
+  positive: '😄',
+  negative: '😢',
+  neutral: '😶',
+}
