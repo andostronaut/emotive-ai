@@ -1,6 +1,6 @@
 import { cli } from 'cleye'
 import { COMMAND_NAME, VERSION } from './utils/constants'
-import { prompts } from './prompts'
+import { process } from './process'
 
 cli(
   {
@@ -10,6 +10,6 @@ cli(
   },
   argv => {
     const prompt = argv._.join(' ')
-    prompts({ prompt })
+    process({ prompt })
   }
 )
