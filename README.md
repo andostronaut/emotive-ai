@@ -25,6 +25,18 @@ yarn add global emotive-ai # yarn
 emotive-ai <text>
 ```
 
+## Example
+
+```bash
+emotive-ai "Hello guys"
+
+# response from processing
+{
+  tag_name: 'positive',
+  confidence: '0.4338557'
+}
+```
+
 ## Support
 
 EmotiveAI is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers.
