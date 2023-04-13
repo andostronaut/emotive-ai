@@ -2,7 +2,7 @@ import * as p from '@clack/prompts'
 import _ from 'lodash'
 import Monkey from 'monkeylearn'
 
-import { transpileTag } from './utils/tag'
+import { transpileTag, iconByTag } from './utils/tag'
 import { CliError } from './utils/cli-error'
 import { getConfig } from './utils/config'
 
@@ -61,9 +61,9 @@ const getClassify = ({
     .classify(monkeyModel, data)
     .then((res: any) => {
       const { classifications } = res.body[0]
-      const tag = transpileTag(classifications[0].tag_name)
+      const tag: string = transpileTag(classifications[0].tag_name)
 
-      spinner.stop(`🎉 ${tag}`)
+      spinner.stop(`${iconByTag[tag.toLowerCase()]} ${tag}`)
     })
     .catch(err => {
       spinner.stop('❌ Error occured on fetching response')
