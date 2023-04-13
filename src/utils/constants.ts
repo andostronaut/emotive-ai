@@ -9,5 +9,3 @@ export const PROJECT_NAME = pkg.name
 export const CANCELED_OP_MSG = 'Operation cancelled'
 
 export const API_KEY = '03c470f28e3a0e76cbc614539f5495160ea9643d'
-
-export const MODEL_ID = 'cl_NDBChtr7'
