@@ -2,13 +2,9 @@ import * as p from '@clack/prompts'
 import _ from 'lodash'
 import Monkey from 'monkeylearn'
 
-import { API_KEY } from './utils/constants'
 import { transpileTag } from './utils/tag'
 import { CliError } from './utils/cli-error'
-
-export const process = ({ prompt }: { prompt: string }) => {
-  getClassify({ prompt })
-}
+import { getConfig } from './utils/config'
 
 const getMonkeyApi = (key: string) => {
   const monkey = new Monkey(key)
@@ -20,9 +16,29 @@ const getMonkeyModel = (model: string) => {
   return model
 }
 
-const getClassify = ({ prompt }: { prompt: string }) => {
-  const monkeyApi = getMonkeyApi(API_KEY)
-  const monkeyModel = getMonkeyModel('cl_NDBChtr7')
+export const process = async ({ prompt }: { prompt: string }) => {
+  const { MONKEY_LEARN_API: key, MONKEY_LEARN_MODEL: model } = await getConfig()
+
+  if (!key) {
+    throw new CliError(
+      'Please set your MonkeyLearn API key via `emotive-ai config set MONKEY_LEARN_API=<your token>`'
+    )
+  }
+
+  getClassify({ key, model, prompt })
+}
+
+const getClassify = ({
+  key,
+  model,
+  prompt,
+}: {
+  key: string
+  model: string
+  prompt: string
+}) => {
+  const monkeyApi = getMonkeyApi(key)
+  const monkeyModel = getMonkeyModel(model)
 
   const { classifiers } = monkeyApi
 
