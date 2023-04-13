@@ -9,7 +9,7 @@ Sentiment and emotion analysis cli that uses machine learning and natural langua
 
 ## Usage
 
-Recommended simple use case
+Recommended
 
 ```bash
 npx emotive-ai <text>
@@ -23,6 +23,18 @@ yarn add global emotive-ai # yarn
 
 
 emotive-ai <text>
+```
+
+## Example
+
+```bash
+emotive-ai "Hello guys"
+
+# response from processing
+{
+  tag_name: 'positive',
+  confidence: '0.4338557'
+}
 ```
 
 ## Support
