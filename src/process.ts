@@ -22,7 +22,7 @@ const getMonkeyModel = (model: string) => {
 
 const getClassify = ({ prompt }: { prompt: string }) => {
   const monkeyApi = getMonkeyApi(API_KEY)
-  const model = getMonkeyModel('cl_NDBChtr7')
+  const monkeyModel = getMonkeyModel('cl_NDBChtr7')
 
   const { classifiers } = monkeyApi
 
@@ -41,7 +41,7 @@ const getClassify = ({ prompt }: { prompt: string }) => {
   spinner.start('Getting response')
 
   classifiers
-    .classify(model, data)
+    .classify(monkeyModel, data)
     .then((res: any) => {
       const { classifications } = res.body[0]
       const tag = transpileTag(classifications[0].tag_name)
