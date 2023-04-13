@@ -21,15 +21,17 @@ const getMonkeyModel = (model: string) => {
 }
 
 const getClassify = ({ prompt }: { prompt: string }) => {
-  const mk = getMonkeyApi(API_KEY)
+  const monkeyApi = getMonkeyApi(API_KEY)
   const model = getMonkeyModel('cl_NDBChtr7')
 
-  const { classifiers } = mk
+  const { classifiers } = monkeyApi
 
   const data: string[] = []
 
   if (_.isUndefined(prompt) || _.isEmpty(prompt)) {
-    throw new CliError('Prompt need to not empty , please verify your prompt')
+    throw new CliError(
+      'Prompt need to not be empty , please verify your prompt'
+    )
   }
 
   data.push(prompt)
