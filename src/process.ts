@@ -21,10 +21,10 @@ const getMonkeyModel = (model: string) => {
 }
 
 const getClassify = ({ prompt }: { prompt: string }) => {
-  const mk = getMonkeyApi(API_KEY)
+  const monkeyApi = getMonkeyApi(API_KEY)
   const model = getMonkeyModel('cl_NDBChtr7')
 
-  const { classifiers } = mk
+  const { classifiers } = monkeyApi
 
   const data: string[] = []
 
