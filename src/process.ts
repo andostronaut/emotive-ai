@@ -1,4 +1,5 @@
 import * as p from '@clack/prompts'
+import _ from 'lodash'
 import Monkey from 'monkeylearn'
 
 import { API_KEY } from './utils/constants'
@@ -25,6 +26,11 @@ const getClassify = ({ prompt }: { prompt: string }) => {
   const { classifiers } = mk
 
   const data: string[] = []
+
+  if (_.isUndefined(prompt) || _.isEmpty(prompt)) {
+    throw new Error('Prompt need to not empty , please verify your prompt')
+  }
+
   data.push(prompt)
 
   const spinner = p.spinner()
