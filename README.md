@@ -9,14 +9,16 @@ Sentiment and emotion analysis cli that uses machine learning and natural langua
 
 ## Setup
 
-Get your MONKEY_LEARN_API_KEY from [MonkeyLearn](https://monkeylearn.com/signup/)
+Get your MONKEY_LEARN_API_KEY and MONKEY_LEARN_MODEL_ID from [MonkeyLearn](https://monkeylearn.com/signup/)
 
 > You'l have to create a account and use the trial mode just to test it
 
-Set your API_KEY via :
+Set your API_KEY and MODEL_ID:
 
 ```bash
-emotive-ai config set MONKEY_LEARN_API_KEY=<your key>
+emotive-ai config set MONKEY_LEARN_API_KEY=<your key> # for api key
+
+emotive-ai config set MONKEY_LEARN_MODEL_ID=<your model id> # for model
 ```
 
 ## Usage
@@ -40,10 +42,22 @@ emotive-ai <text>
 ## Example
 
 ```bash
-emotive-ai hello guys # Positive
+emotive-ai hello guys
+```
 
+> 😄 : Positive with 65.81% of confidence
+
+A positive sentiment tag indicates that the sentiment of a piece of text is generally positive.
+This could mean that the text expresses a favorable opinion, conveys happiness or excitement, or generally has a positive tone.
+
+```bash
 emotive-ai its really a bad day # Negative
 ```
+
+> 😢 : Negative with 93.82% of confidence
+
+A negative sentiment tag indicates that the sentiment of a piece of text is generally negative.
+This could mean that the text expresses a critical opinion, conveys sadness or disappointment, or generally has a negative tone.
 
 ## Support
 
