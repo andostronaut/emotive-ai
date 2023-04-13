@@ -14,9 +14,9 @@ export const getClassify = ({ prompt }: { prompt: string }) => {
     .classify(model, data)
     .then((res: any) => {
       const { classifications } = res.body[0]
-      return classifications
+      console.log(classifications)
     })
     .catch(err => {
-      throw new Error(err)
+      throw new Error(err.response)
     })
 }
