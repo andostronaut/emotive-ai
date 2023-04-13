@@ -1,7 +1,11 @@
 import { cli } from 'cleye'
-import { COMMAND_NAME, VERSION } from './utils/constants'
-import { process } from './process'
+import { red } from 'picocolors'
+
 import config from './commands/config'
+
+import { COMMAND_NAME, VERSION } from './utils/constants'
+import { classify } from './classify'
+import { handleCliError } from './utils/cli-error'
 
 cli(
   {
@@ -12,6 +16,10 @@ cli(
   },
   argv => {
     const prompt = argv._.join(' ')
-    process({ prompt })
+    classify({ prompt }).catch(err => {
+      console.error(`\n${red('✖')} ${err.message}`)
+      handleCliError(err)
+      process.exit(1)
+    })
   }
 )

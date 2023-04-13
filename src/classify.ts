@@ -16,7 +16,7 @@ const getMonkeyModel = (model: string) => {
   return model
 }
 
-export const process = async ({ prompt }: { prompt: string }) => {
+export const classify = async ({ prompt }: { prompt: string }) => {
   const { MONKEY_LEARN_API: key, MONKEY_LEARN_MODEL: model } = await getConfig()
 
   if (!key) {
