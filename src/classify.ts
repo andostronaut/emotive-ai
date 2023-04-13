@@ -66,8 +66,6 @@ const getClassify = ({
       spinner.stop(`${iconByTag[tag.toLowerCase()]} ${tag}`)
     })
     .catch(err => {
-      spinner.stop('❌ Error occured on fetching response')
-
       throw new CliError(`Error occured on fetching response ${err.response}`)
     })
 }
