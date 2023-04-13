@@ -11,7 +11,7 @@ Sentiment and emotion analysis cli that uses machine learning and natural langua
 
 Get your MONKEY_LEARN_API_KEY from [MonkeyLearn](https://monkeylearn.com/signup/)
 
-> You can just create a account in trial just to test it
+> You'l have to create a account and use the trial mode just to test it
 
 Set your API_KEY via :
 
