@@ -46,18 +46,14 @@ emotive-ai hello guys
 ```
 
 > 😄 : Positive with 65.81% of confidence
-
-A positive sentiment tag indicates that the sentiment of a piece of text is generally positive.
-This could mean that the text expresses a favorable opinion, conveys happiness or excitement, or generally has a positive tone.
+> A positive sentiment tag indicates that the sentiment of a piece of text is generally positive.This could mean that the text expresses a favorable opinion, conveys happiness or excitement, or generally has a positive tone.
 
 ```bash
 emotive-ai its really a bad day # Negative
 ```
 
 > 😢 : Negative with 93.82% of confidence
-
-A negative sentiment tag indicates that the sentiment of a piece of text is generally negative.
-This could mean that the text expresses a critical opinion, conveys sadness or disappointment, or generally has a negative tone.
+> A negative sentiment tag indicates that the sentiment of a piece of text is generally negative. This could mean that the text expresses a critical opinion, conveys sadness or disappointment, or generally has a negative tone.
 
 ## Support
 
