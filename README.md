@@ -35,6 +35,13 @@ emotive-ai "Hello guys"
   tag_name: 'positive',
   confidence: '0.4338557'
 }
+
+emotive-ai  "It's really a bad day"
+
+{
+  tag_name: 'negative',
+  confidence: '0.9047749'
+}
 ```
 
 ## Support
