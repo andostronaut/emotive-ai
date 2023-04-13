@@ -1,8 +1,14 @@
 import * as p from '@clack/prompts'
 import _ from 'lodash'
 import Monkey from 'monkeylearn'
+import dedent from 'dedent'
 
-import { transpileTag, iconByTag } from './utils/tag'
+import {
+  transpileTag,
+  iconByTag,
+  descByTag,
+  transpileConfidence,
+} from './utils/tag'
 import { CliError } from './utils/cli-error'
 import { getConfig } from './utils/config'
 
@@ -61,11 +67,21 @@ const getClassify = ({
     .classify(monkeyModel, data)
     .then((res: any) => {
       const { classifications } = res.body[0]
-      const tag: string = transpileTag(classifications[0].tag_name)
+      const cls = classifications[0]
 
-      spinner.stop(`${iconByTag[tag.toLowerCase()]} ${tag}`)
+      const tagAndConfidence: string = dedent`${
+        iconByTag[cls.tag_name]
+      } : ${transpileTag(cls.tag_name)} with ${transpileConfidence(
+        cls.confidence
+      )} of confidence`
+      const desc: string = dedent`${descByTag[cls.tag_name]}`
+
+      const response = tagAndConfidence + '\n\n' + desc
+
+      spinner.stop(response)
     })
     .catch(err => {
+      spinner.stop('')
       throw new CliError(`Error occured on fetching response ${err.response}`)
     })
 }
