@@ -6,7 +6,7 @@ import config from './commands/config'
 import { COMMAND_NAME, VERSION } from './utils/constants'
 import { handleCliError } from './utils/cli-error'
 
-import { ai } from './ai'
+import { classifiers } from './classifiers'
 
 cli(
   {
@@ -17,7 +17,7 @@ cli(
   },
   argv => {
     const prompt = argv._.join(' ')
-    ai({ prompt }).catch(err => {
+    classifiers({ prompt }).catch(err => {
       console.error(`\n${red('✖')} ${err.message}`)
       handleCliError(err)
       process.exit(1)
