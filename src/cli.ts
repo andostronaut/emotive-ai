@@ -1,5 +1,5 @@
 import { cli } from 'cleye'
-import { red } from 'picocolors'
+import colors from 'picocolors'
 
 import config from './commands/config'
 
@@ -18,7 +18,7 @@ cli(
   argv => {
     const prompt = argv._.join(' ')
     classifiers({ prompt }).catch(err => {
-      console.error(`\n${red('✖')} ${err.message}`)
+      console.error(`\n${colors.red('✖')} ${err.message}`)
       handleCliError(err)
       process.exit(1)
     })
