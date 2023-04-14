@@ -1,5 +1,5 @@
 import { command } from 'cleye'
-import { red } from 'picocolors'
+import colors from 'picocolors'
 import { hasOwn, getConfig, setConfigs } from '../utils/config.js'
 import { CliError, handleCliError } from '../utils/cli-error.js'
 
@@ -38,7 +38,7 @@ export default command(
 
       throw new CliError(`Invalid mode: ${mode}`)
     })().catch(error => {
-      console.error(`\n${red('✖')} ${error.message}`)
+      console.error(`\n${colors.red('✖')} ${error.message}`)
       handleCliError(error)
       process.exit(1)
     })

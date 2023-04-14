@@ -2,7 +2,7 @@ import * as p from '@clack/prompts'
 import _ from 'lodash'
 import Monkey from 'monkeylearn'
 import dedent from 'dedent'
-import { red } from 'picocolors'
+import colors from 'picocolors'
 
 import {
   transpileTag,
@@ -89,7 +89,7 @@ const classify = ({
       spinner.stop(response)
     })
     .catch(err => {
-      spinner.stop(`${red('✖')} ${err.message}`)
+      spinner.stop(`${colors.red('✖')} ${err.message}`)
       process.exit(1)
     })
 }
