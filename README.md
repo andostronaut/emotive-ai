@@ -7,6 +7,8 @@
 
 Sentiment and emotion analysis cli that uses machine learning and natural language processing to identify and classify emotions in text data
 
+![Demo](docs/demo.png)
+
 ## Setup
 
 Get your MONKEY_LEARN_API_KEY and MONKEY_LEARN_MODEL_ID from [MonkeyLearn](https://monkeylearn.com/signup/)
