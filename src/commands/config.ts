@@ -1,6 +1,6 @@
 import { command } from 'cleye'
 import colors from 'picocolors'
-import { hasOwn, getConfig, setConfigs } from '../utils/config.js'
+import { hasOwn, getConfig, setConfigs, showConfigUI } from '../utils/config.js'
 import { CliError, handleCliError } from '../utils/cli-error.js'
 
 export default command(
@@ -12,6 +12,11 @@ export default command(
   argv => {
     ;(async () => {
       const { mode, keyValue: keyValues } = argv._
+
+      if (mode === 'ui' || !mode) {
+        await showConfigUI()
+        return
+      }
 
       if (!keyValues.length) {
         console.error('Error: Missing required parameter "key=value"\n')
