@@ -22,7 +22,7 @@ const getMonkeyModel = (model: string) => {
   return model
 }
 
-export const classify = async ({ prompt }: { prompt: string }) => {
+export const classifiers = async ({ prompt }: { prompt: string }) => {
   const { MONKEY_LEARN_API_KEY: key, MONKEY_LEARN_MODEL_ID: model } =
     await getConfig()
 
@@ -38,10 +38,10 @@ export const classify = async ({ prompt }: { prompt: string }) => {
     )
   }
 
-  getClassify({ key, model, prompt })
+  classify({ key, model, prompt })
 }
 
-const getClassify = ({
+const classify = ({
   key,
   model,
   prompt,

@@ -4,8 +4,9 @@ import { red } from 'picocolors'
 import config from './commands/config'
 
 import { COMMAND_NAME, VERSION } from './utils/constants'
-import { classify } from './classify'
 import { handleCliError } from './utils/cli-error'
+
+import { classifiers } from './classifiers'
 
 cli(
   {
@@ -16,7 +17,7 @@ cli(
   },
   argv => {
     const prompt = argv._.join(' ')
-    classify({ prompt }).catch(err => {
+    classifiers({ prompt }).catch(err => {
       console.error(`\n${red('✖')} ${err.message}`)
       handleCliError(err)
       process.exit(1)
