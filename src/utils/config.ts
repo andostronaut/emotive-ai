@@ -145,7 +145,7 @@ export const showConfigUI = async () => {
         p.cancel(CANCELED_OP_MSG)
         process.exit(0)
       }
-      setConfigs([['model', model]])
+      setConfigs([['MONKEY_LEARN_MODEL_ID', model]])
     }
 
     showConfigUI()
