@@ -89,8 +89,7 @@ const classify = ({
       spinner.stop(response)
     })
     .catch(err => {
-      spinner.stop('')
-      console.error(`\n${red('✖')} ${err.message}`)
+      spinner.stop(`${red('✖')} ${err.message}`)
       process.exit(1)
     })
 }
