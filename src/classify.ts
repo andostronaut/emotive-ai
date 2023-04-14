@@ -32,6 +32,12 @@ export const classify = async ({ prompt }: { prompt: string }) => {
     )
   }
 
+  if (!model) {
+    throw new CliError(
+      'Please set your MonkeyLearn Model ID via `emotive-ai config set MONKEY_LEARN_MODEL_ID=<your model id>`'
+    )
+  }
+
   getClassify({ key, model, prompt })
 }
 
