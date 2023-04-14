@@ -124,9 +124,9 @@ export const showConfigUI = async () => {
 
     if (choice === 'MONKEY_LEARN_API_KEY') {
       const key = await p.text({
-        message: 'Enter your OpenAI API key',
+        message: 'Enter your MonkeyLearn API key',
         validate: value => {
-          if (!value.startsWith('sk-')) return 'Must start with "sk-"'
+          if (!value) return 'API Key must be defined'
         },
       })
       if (p.isCancel(key)) {
@@ -137,6 +137,9 @@ export const showConfigUI = async () => {
     } else if (choice === 'MONKEY_LEARN_MODEL_ID') {
       const model = await p.text({
         message: 'Enter the model you want to use',
+        validate: value => {
+          if (!value) return 'Model ID must be defined'
+        },
       })
       if (p.isCancel(model)) {
         p.cancel(CANCELED_OP_MSG)
