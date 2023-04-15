@@ -18,6 +18,8 @@ Get your MONKEY_LEARN_API_KEY and MONKEY_LEARN_MODEL_ID from [MonkeyLearn](https
 Set your API_KEY and MODEL_ID:
 
 ```bash
+emotive-ai config ui # to use ui prompt directly
+
 emotive-ai config set MONKEY_LEARN_API_KEY=<your key> # for api key
 
 emotive-ai config set MONKEY_LEARN_MODEL_ID=<your model id> # for model
